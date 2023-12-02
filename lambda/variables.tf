@@ -1,20 +1,19 @@
-variable "source_code_hash" {}
+variable "source_dir" {}
 variable "name" {}
-variable "filename" {}
 variable "environment" {
   default = {}
 }
 variable "handler" {
-    default = "src.main.lambda_handler"
+  default = "src.main.lambda_handler"
 }
 variable "runtime" {
   default = "python3.10"
 }
 variable "tags" {
-    default = {
-        "Terraform" = "true"
-        "Application" = "examon"
-    }
+  default = {
+    "Terraform"   = "true"
+    "Application" = "examon"
+  }
 }
 #https://docs.aws.amazon.com/lambda/latest/dg/chapter-layers.html
 variable "layers" {
@@ -30,7 +29,7 @@ variable "architectures" {
 }
 # https://registry.terraform.io/providers/-/aws/latest/docs/resources/lambda_function#memory_size
 variable "memory_size" {
-    default = 128
+  default = 128
 }
 # https://registry.terraform.io/providers/-/aws/latest/docs/resources/lambda_function#timeout
 variable "timeout" {
